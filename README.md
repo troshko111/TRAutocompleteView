@@ -1,5 +1,6 @@
 What is TRAutocompleteView?
 ---------------------
+![Alt text](/screenshots/dark.png "Dark-styled")    ![Alt text](/screenshots/light.png "Light-styled")  ![Alt text](/screenshots/landscape.png "Landscape")
 
 TRAutocompleteView is customizable autocomplete/suggestionslist view. No inheritance, just a single line of code - attach TRAutocompleteView 
 to any existing instance of UITextField, customize look and feel (optional), and that's it!
