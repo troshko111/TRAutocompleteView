@@ -16,7 +16,7 @@ Step 1: Get TRAutocompleteView files (add as Git submodule)(recommended)
 ----------------
 In terminal navigate to the root of your project directory and run these commands:
 
-    git submodule add git@github.com:TarasRoshko/TRAutocompleteView.git thirdparty/TRAutocompleteView
+    git submodule add git://github.com/TarasRoshko/TRAutocompleteView.git thirdparty/TRAutocompleteView
     git commit -m 'TRAutocompleteView'
 
 This creates new submodule, downloads the files to thirdparty/TRAutocompleteView directory within your project and creates new commit with updated git repo settings.
