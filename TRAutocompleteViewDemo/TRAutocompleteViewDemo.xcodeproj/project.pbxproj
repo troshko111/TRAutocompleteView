@@ -431,6 +431,7 @@
 				76E6DCD816DE10E500F53C02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
