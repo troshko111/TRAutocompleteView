@@ -1,5 +1,6 @@
 What is TRAutocompleteView?
 ---------------------
+![Alt text](/screenshots/dark.png "Dark-styled")    ![Alt text](/screenshots/light.png "Light-styled")  ![Alt text](/screenshots/landscape.png "Landscape")
 
 TRAutocompleteView is customizable autocomplete/suggestionslist view. No inheritance, just a single line of code - attach TRAutocompleteView 
 to any existing instance of UITextField, customize look and feel (optional), and that's it!
@@ -15,7 +16,7 @@ Step 1: Get TRAutocompleteView files (add as Git submodule)(recommended)
 ----------------
 In terminal navigate to the root of your project directory and run these commands:
 
-    git submodule add git@github.com:TarasRoshko/TRAutocompleteView.git thirdparty/TRAutocompleteView
+    git submodule add git://github.com/TarasRoshko/TRAutocompleteView.git thirdparty/TRAutocompleteView
     git commit -m 'TRAutocompleteView'
 
 This creates new submodule, downloads the files to thirdparty/TRAutocompleteView directory within your project and creates new commit with updated git repo settings.
