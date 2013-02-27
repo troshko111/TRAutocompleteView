@@ -114,11 +114,6 @@
     self.topMargin = 0;
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (void)keyboardWasShown:(NSNotification *)notification
 {
     NSDictionary* info = [notification userInfo];
@@ -202,6 +197,22 @@
 
     _queryTextField.text = self.selectedSuggestion.suggestionText;
     [_queryTextField resignFirstResponder];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]
+                           removeObserver:self
+                                     name:UITextFieldTextDidChangeNotification
+                                   object:nil];
+    [[NSNotificationCenter defaultCenter]
+                           removeObserver:self
+                                     name:UIKeyboardDidShowNotification
+                                   object:nil];
+    [[NSNotificationCenter defaultCenter]
+                           removeObserver:self
+                                     name:UIKeyboardWillHideNotification
+                                   object:nil];
 }
 
 @end

@@ -34,18 +34,29 @@
 
 @implementation TRViewController
 {
-    IBOutlet UITextField *_queryTextField;
-    TRAutocompleteView *_autocompleteView;
+    __weak IBOutlet UITextField *_defaultQueryTextField;
+    __weak IBOutlet UITextField *_customQueryTextField;
+
+    TRAutocompleteView *_autocompleteViewForDefault;
+    TRAutocompleteView *_autocompleteViewForCustom;
 }
 
 - (void)loadView
 {
     [super loadView];
 
-    [_queryTextField setLeftPadding:2];
-    _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_queryTextField
-                                                         usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
-                                                        presentingIn:self];
+    [_defaultQueryTextField setLeftPadding:2];
+    _autocompleteViewForDefault = [TRAutocompleteView autocompleteViewBindedTo:_defaultQueryTextField
+                                                                   usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
+                                                                  presentingIn:self];
+
+    [_customQueryTextField setLeftPadding:9];
+    _autocompleteViewForCustom = [TRAutocompleteView autocompleteViewBindedTo:_customQueryTextField
+                                                                       usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
+                                                                      presentingIn:self];
+    _autocompleteViewForCustom.topMargin = -5;
+    _autocompleteViewForCustom.foregroundColor = [UIColor whiteColor];
+    _autocompleteViewForCustom.backgroundColor = [UIColor colorWithRed:(27)/255.0f green:(27)/255.0f blue:(27)/255.0f alpha:1];
 }
 
 @end
