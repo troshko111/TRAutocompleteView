@@ -30,7 +30,7 @@
 #import "TRViewController.h"
 #import "TRAutocompleteView.h"
 #import "TRGoogleMapsAutocompleteItemsSource.h"
-#import "UITextFieldExtensions.h"
+#import "TRTextFieldExtensions.h"
 
 @implementation TRViewController
 {

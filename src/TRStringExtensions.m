@@ -27,7 +27,7 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import "NSStringExtensions.h"
+#import "TRStringExtensions.h"
 
 @implementation NSString (TRStringExtensions)
 

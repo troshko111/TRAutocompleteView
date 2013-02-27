@@ -31,7 +31,7 @@
 #import "TRGoogleMapsAutocompleteItemsSource.h"
 #import "TRGoogleMapsAPI.h"
 #import "AFJSONRequestOperation.h"
-#import "NSStringExtensions.h"
+#import "TRStringExtensions.h"
 
 @implementation TRGoogleMapsAutocompleteItemsSource
 {

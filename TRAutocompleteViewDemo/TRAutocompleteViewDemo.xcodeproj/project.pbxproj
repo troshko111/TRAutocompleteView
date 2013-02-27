@@ -17,8 +17,8 @@
 		69076D53513CC523F3390E49 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076C4783E97AB874031F58 /* AFURLConnectionOperation.m */; };
 		69076F15AD5CAE3C41ECDD44 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 690766B727D0EA93B74C402F /* AFHTTPClient.m */; };
 		69076FE55865293208CAEBB4 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907627314849C3F3ED18005 /* AFNetworkActivityIndicatorManager.m */; };
-		76272FC416DE7DF8002B848B /* NSStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC116DE7DF8002B848B /* NSStringExtensions.m */; };
-		76272FC516DE7DF8002B848B /* UITextFieldExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC316DE7DF8002B848B /* UITextFieldExtensions.m */; };
+		76272FC416DE7DF8002B848B /* TRStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC116DE7DF8002B848B /* TRStringExtensions.m */; };
+		76272FC516DE7DF8002B848B /* TRTextFieldExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */; };
 		76E6DCB416DE10E500F53C02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB316DE10E500F53C02 /* UIKit.framework */; };
 		76E6DCB616DE10E500F53C02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB516DE10E500F53C02 /* Foundation.framework */; };
 		76E6DCB816DE10E500F53C02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB716DE10E500F53C02 /* CoreGraphics.framework */; };
@@ -58,10 +58,10 @@
 		69076C4783E97AB874031F58 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		69076EE3944EA913F737119C /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = ../thirdparty/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		69076FC975806790E5F18B6B /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		76272FC016DE7DF8002B848B /* NSStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringExtensions.h; path = ../src/NSStringExtensions.h; sourceTree = "<group>"; };
-		76272FC116DE7DF8002B848B /* NSStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringExtensions.m; path = ../src/NSStringExtensions.m; sourceTree = "<group>"; };
-		76272FC216DE7DF8002B848B /* UITextFieldExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITextFieldExtensions.h; path = ../src/UITextFieldExtensions.h; sourceTree = "<group>"; };
-		76272FC316DE7DF8002B848B /* UITextFieldExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITextFieldExtensions.m; path = ../src/UITextFieldExtensions.m; sourceTree = "<group>"; };
+		76272FC016DE7DF8002B848B /* TRStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRStringExtensions.h; path = ../src/TRStringExtensions.h; sourceTree = "<group>"; };
+		76272FC116DE7DF8002B848B /* TRStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRStringExtensions.m; path = ../src/TRStringExtensions.m; sourceTree = "<group>"; };
+		76272FC216DE7DF8002B848B /* TRTextFieldExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRTextFieldExtensions.h; path = ../src/TRTextFieldExtensions.h; sourceTree = "<group>"; };
+		76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRTextFieldExtensions.m; path = ../src/TRTextFieldExtensions.m; sourceTree = "<group>"; };
 		76E6DCB016DE10E500F53C02 /* TRAutocompleteViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRAutocompleteViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E6DCB316DE10E500F53C02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		76E6DCB516DE10E500F53C02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,10 +196,10 @@
 		76E6DCD916DE128900F53C02 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				76272FC016DE7DF8002B848B /* NSStringExtensions.h */,
-				76272FC116DE7DF8002B848B /* NSStringExtensions.m */,
-				76272FC216DE7DF8002B848B /* UITextFieldExtensions.h */,
-				76272FC316DE7DF8002B848B /* UITextFieldExtensions.m */,
+				76272FC016DE7DF8002B848B /* TRStringExtensions.h */,
+				76272FC116DE7DF8002B848B /* TRStringExtensions.m */,
+				76272FC216DE7DF8002B848B /* TRTextFieldExtensions.h */,
+				76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */,
 				76E6DCDA16DE129C00F53C02 /* TRAutocompleteItemsSource.h */,
 				76E6DCDB16DE129C00F53C02 /* TRAutocompleteView.h */,
 				76E6DCDC16DE129C00F53C02 /* TRAutocompleteView.m */,
@@ -297,8 +297,8 @@
 				690764ED17B27BE168A24444 /* AFXMLRequestOperation.m in Sources */,
 				69076431F1C7EFBAFFDBD49D /* UIImageView+AFNetworking.m in Sources */,
 				6907606835FD3267D373C2E5 /* TRSuggestion.m in Sources */,
-				76272FC416DE7DF8002B848B /* NSStringExtensions.m in Sources */,
-				76272FC516DE7DF8002B848B /* UITextFieldExtensions.m in Sources */,
+				76272FC416DE7DF8002B848B /* TRStringExtensions.m in Sources */,
+				76272FC516DE7DF8002B848B /* TRTextFieldExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

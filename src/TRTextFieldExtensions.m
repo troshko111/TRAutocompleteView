@@ -27,7 +27,7 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import "UITextFieldExtensions.h"
+#import "TRTextFieldExtensions.h"
 
 @implementation UITextField (TRTextFieldExtensions)
 
