@@ -119,8 +119,21 @@
     NSDictionary* info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
+    CGFloat contextViewHeight = 0;
+    CGFloat kbHeight = 0;
+    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation))
+    {
+        contextViewHeight = _contextController.view.frame.size.height;
+        kbHeight = kbSize.height;
+    }
+    else if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+    {
+        contextViewHeight = _contextController.view.frame.size.width;
+        kbHeight = kbSize.width;
+    }
+
     CGFloat calculatedY = _queryTextField.frame.origin.y + _queryTextField.frame.size.height + self.topMargin;
-    CGFloat calculatedHeight = _contextController.view.frame.size.height - calculatedY - kbSize.height;
+    CGFloat calculatedHeight = contextViewHeight - calculatedY - kbHeight;
 
     calculatedHeight += _contextController.tabBarController.tabBar.frame.size.height; //keyboard is shown over it, need to compensate
 
