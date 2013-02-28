@@ -35,38 +35,32 @@
 
 @implementation TRViewController
 {
-    __weak IBOutlet UITextField *_defaultQueryTextField;
-    __weak IBOutlet UITextField *_customQueryTextField;
-
-    TRAutocompleteView *_autocompleteViewForDefault;
-    TRAutocompleteView *_autocompleteViewForCustom;
+    __weak IBOutlet UITextField *_textField;
+    TRAutocompleteView *_autocompleteView;
 }
 
 - (void)loadView
 {
     [super loadView];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[[UIImage imageNamed:@"debut_dark"]
+                                                                         resizableImageWithCapInsets:UIEdgeInsetsMake(0,
+                                                                                                                      0,
+                                                                                                                      0,
+                                                                                                                      0)]];
 
-    [_defaultQueryTextField setLeftPadding:2];
-    _autocompleteViewForDefault = [TRAutocompleteView autocompleteViewBindedTo:_defaultQueryTextField
-                                                                   usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
-                                                                                                                     initWithMinimumCharactersToTrigger:2]
-                                                                   cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
-                                                                                                                       initWithCellForegroundColor:[UIColor darkGrayColor]
-                                                                                                                                          fontSize:14]
-                                                                  presentingIn:self];
-
-    [_customQueryTextField setLeftPadding:9];
-    _autocompleteViewForCustom = [TRAutocompleteView autocompleteViewBindedTo:_customQueryTextField
-                                                                  usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2]
-                                                                  cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
-                                                                                                                      initWithCellForegroundColor:[UIColor whiteColor]
-                                                                                                                                         fontSize:14]
-                                                                 presentingIn:self];
-    _autocompleteViewForCustom.topMargin = -5;
-    _autocompleteViewForCustom.backgroundColor = [UIColor colorWithRed:(27) / 255.0f
-                                                                 green:(27) / 255.0f
-                                                                  blue:(27) / 255.0f
-                                                                 alpha:1];
+    [_textField setLeftPadding:9];
+    _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
+                                                         usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
+                                                                                                           initWithMinimumCharactersToTrigger:2]
+                                                         cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
+                                                                                                             initWithCellForegroundColor:[UIColor lightGrayColor]
+                                                                                                                                fontSize:14]
+                                                        presentingIn:self];
+    _autocompleteView.topMargin = -5;
+    _autocompleteView.backgroundColor = [UIColor colorWithRed:(27) / 255.0f
+                                                        green:(27) / 255.0f
+                                                         blue:(27) / 255.0f
+                                                        alpha:1];
 }
 
 @end
