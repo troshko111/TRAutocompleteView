@@ -1,10 +1,16 @@
 What is TRAutocompleteView?
 ---------------------
-![Alt text](/screenshots/dark.png "Dark-styled")    ![Alt text](/screenshots/light.png "Light-styled")  ![Alt text](/screenshots/landscape.png "Landscape")
+<p align="center">
+  <img src="/screenshots/iphone_portrait.png" />
+</p>
 
-TRAutocompleteView is customizable autocomplete/suggestionslist view. No inheritance, just a single line of code - attach TRAutocompleteView 
+<p align="center">
+  <img src="/screenshots/ipad.png" />
+</p>
+
+TRAutocompleteView is highly customizable autocomplete/suggestionslist view. No inheritance, just a single line of code - attach TRAutocompleteView 
 to any existing instance of UITextField, customize look and feel (optional), and that's it!
-It works on the iPhone and iPad, with or without rotation.
+It works on the iPhone and iPad and supports all possible orientations.
 
 
 Step 0: Prerequisites
@@ -45,41 +51,70 @@ Assume you have two ivars in your view controller:
 Bind autocompleteview to that UITextField (e.g in loadView method):
 
 ````objective-c
-    _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
-                                                         usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
-                                                        presentingIn:self];
+_autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
+                                                     usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2]
+                                                     cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc] initWithCellForegroundColor:[UIColor lightGrayColor] fontSize:14]
+                                                    presentingIn:self];
 ````
 
 What's going on here?
-You've just binded _autocompleteView to _textField, and used google maps completion source. Positioning, resizing, etc will be handled for you automatically.
-If you want to use custom autocompletion source, no problem - conform TRAutocompleteItemsSource, and pass it as source to autocompleteViewBindedTo method. 
-Every TRAutocompleteItemsSource must provide minimumCharactersToTrigger method, returning NSUinteger, 
-so it's extremely easy to configure when TRAutocompleteView should appear. In example above, it's shown after you type >= 2 symbols (for network traffic and performance reasons)
+You've just binded _autocompleteView to _textField, and used google maps completion source with google maps cell factory. Positioning, resizing, etc will be handled for you automatically.
+As you can see from the example above, if you want completely different items source and customized cells - there is nothing easier:
+````objective-c
+@protocol TRAutocompleteItemsSource <NSObject>
 
+- (NSUInteger)minimumCharactersToTrigger;
+- (void)itemsFor:(NSString *)query whenReady:(void (^)(NSArray *))suggestionsReady;
+
+@end
+
+@protocol TRSuggestionItem <NSObject>
+
+- (NSString *)completionText;
+
+@end
+
+@protocol TRAutocompletionCell <NSObject>
+
+- (void)updateWith:(id <TRSuggestionItem>)item;
+
+@end
+
+@protocol TRAutocompletionCellFactory <NSObject>
+
+- (id <TRAutocompletionCell>)createReusableCellWithIdentifier:(NSString *)identifier;
+
+@end
+
+````
+
+Conform TRAutocompleteItemsSource to provide your own items source, conform TRAutocompletionCellFactory to provide your custom cells.
 
 Step 4: Customize TRAutocompleteView
 ------------------------
   
 **TRAutocompleteView Customizations**
 
-You can use these properties to customize colors, selection style, separators and adjust vertical margin:
+Main customization step is to create your own cell and use it with CellFactory, but also you can use following properties
 
 ````objective-c
-@property(nonatomic) UIColor *foregroundColor;
 @property(nonatomic) UIColor *separatorColor;
-@property(nonatomic) CGFloat fontSize;
-@property(nonatomic) UITableViewCellSelectionStyle selectionStyle;
 @property(nonatomic) UITableViewCellSeparatorStyle separatorStyle;
 
 @property(nonatomic) CGFloat topMargin;
 ````
 
-Also, there are two more properties for tracking completion state:
+Also, two properties for tracking completion state:
 
 ````objective-c
-@property(readonly) TRSuggestion *selectedSuggestion;
+@property(readonly) id<TRSuggestionItem> selectedSuggestion;
 @property(readonly) NSArray *suggestions;
 ````
+
+Step 4: Customize TRAutocompleteView
+------------------------
+Check out Demo project, it's extremely easy to get started and requires a few simple steps to configure view for your needs,
+Google maps source/factory code will help you to understand what's going on
 
 Cocoapods
 ------------------------
