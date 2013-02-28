@@ -48,7 +48,7 @@
     CGFloat _fontSize;
 }
 
-- (id)initWithForegroundColor:(UIColor *)foregroundColor fontSize:(CGFloat)fontSize
+- (id)initWithCellForegroundColor:(UIColor *)foregroundColor fontSize:(CGFloat)fontSize
 {
     self = [super init];
     if (self)

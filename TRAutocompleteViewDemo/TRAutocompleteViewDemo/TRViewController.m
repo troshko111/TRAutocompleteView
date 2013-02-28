@@ -51,16 +51,16 @@
                                                                    usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
                                                                                                                      initWithMinimumCharactersToTrigger:2]
                                                                    cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
-                                                                                                                       initWithForegroundColor:[UIColor darkGrayColor]
-                                                                                                                                      fontSize:14]
+                                                                                                                       initWithCellForegroundColor:[UIColor darkGrayColor]
+                                                                                                                                          fontSize:14]
                                                                   presentingIn:self];
 
     [_customQueryTextField setLeftPadding:9];
     _autocompleteViewForCustom = [TRAutocompleteView autocompleteViewBindedTo:_customQueryTextField
                                                                   usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2]
                                                                   cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
-                                                                                                                      initWithForegroundColor:[UIColor whiteColor]
-                                                                                                                                     fontSize:14]
+                                                                                                                      initWithCellForegroundColor:[UIColor whiteColor]
+                                                                                                                                         fontSize:14]
                                                                  presentingIn:self];
     _autocompleteViewForCustom.topMargin = -5;
     _autocompleteViewForCustom.backgroundColor = [UIColor colorWithRed:(27) / 255.0f
