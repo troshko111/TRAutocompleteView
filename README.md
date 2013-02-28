@@ -111,7 +111,7 @@ Also, two properties for tracking completion state:
 @property(readonly) NSArray *suggestions;
 ````
 
-Step 4: Customize TRAutocompleteView
+Step 5: Customize TRAutocompleteView
 ------------------------
 Check out Demo project, it's extremely easy to get started and requires a few simple steps to configure view for your needs,
 Google maps source/factory code will help you to understand what's going on
