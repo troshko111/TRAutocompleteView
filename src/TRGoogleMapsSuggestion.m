@@ -27,11 +27,22 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import <Foundation/Foundation.h>
-#import "TRAutocompleteItemsSource.h"
+#import "TRGoogleMapsSuggestion.h"
 
-@interface TRGoogleMapsAutocompleteItemsSource : NSObject <TRAutocompleteItemsSource>
+@implementation TRGoogleMapsSuggestion
 
-- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger;
+- (id)initWith:(NSString *)address
+{
+    self = [super init];
+    if (self)
+        self.address = address;
+
+    return self;
+}
+
+- (NSString *)completionText
+{
+    return self.address;
+}
 
 @end

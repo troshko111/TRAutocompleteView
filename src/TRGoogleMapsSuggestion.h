@@ -30,8 +30,10 @@
 #import <Foundation/Foundation.h>
 #import "TRAutocompleteItemsSource.h"
 
-@interface TRGoogleMapsAutocompleteItemsSource : NSObject <TRAutocompleteItemsSource>
+@interface TRGoogleMapsSuggestion : NSObject <TRSuggestionItem>
 
-- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger;
+@property(nonatomic) NSString *address;
+
+- (id)initWith:(NSString *)address;
 
 @end

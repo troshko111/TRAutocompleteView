@@ -30,23 +30,22 @@
 #import <Foundation/Foundation.h>
 
 @protocol TRAutocompleteItemsSource;
-@class TRSuggestion;
+@protocol TRAutocompletionCellFactory;
+@protocol TRSuggestionItem;
 
 @interface TRAutocompleteView : UIView
 
-@property(readonly) TRSuggestion *selectedSuggestion;
+@property(readonly) id<TRSuggestionItem> selectedSuggestion;
 @property(readonly) NSArray *suggestions;
 
-@property(nonatomic) UIColor *foregroundColor;
 @property(nonatomic) UIColor *separatorColor;
-@property(nonatomic) CGFloat fontSize;
-@property(nonatomic) UITableViewCellSelectionStyle selectionStyle;
 @property(nonatomic) UITableViewCellSeparatorStyle separatorStyle;
 
 @property(nonatomic) CGFloat topMargin;
 
 + (TRAutocompleteView *)autocompleteViewBindedTo:(UITextField *)textField
                                      usingSource:(id <TRAutocompleteItemsSource>)itemsSource
+                                     cellFactory:(id <TRAutocompletionCellFactory>)factory
                                     presentingIn:(UIViewController *)controller;
 
 @end

@@ -27,14 +27,13 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "TRAutocompleteView.h"
 #import "TRAutocompleteItemsSource.h"
-#import "TRSuggestion.h"
+#import "TRAutocompletionCellFactory.h"
 
 @interface TRAutocompleteView () <UITableViewDelegate, UITableViewDataSource>
 
-@property(readwrite) TRSuggestion *selectedSuggestion;
+@property(readwrite) id <TRSuggestionItem> selectedSuggestion;
 @property(readwrite) NSArray *suggestions;
 
 @end
@@ -48,21 +47,25 @@
 
     UITableView *_table;
     id <TRAutocompleteItemsSource> _itemsSource;
+    id <TRAutocompletionCellFactory> _cellFactory;
 }
 
 + (TRAutocompleteView *)autocompleteViewBindedTo:(UITextField *)textField
                                      usingSource:(id <TRAutocompleteItemsSource>)itemsSource
+                                     cellFactory:(id <TRAutocompletionCellFactory>)factory
                                     presentingIn:(UIViewController *)controller
 {
     return [[TRAutocompleteView alloc] initWithFrame:CGRectZero
                                            textField:textField
                                          itemsSource:itemsSource
+                                         cellFactory:factory
                                           controller:controller];
 }
 
 - (id)initWithFrame:(CGRect)frame
           textField:(UITextField *)textField
         itemsSource:(id <TRAutocompleteItemsSource>)itemsSource
+        cellFactory:(id <TRAutocompletionCellFactory>)factory
          controller:(UIViewController *)controller
 {
     self = [super initWithFrame:frame];
@@ -72,6 +75,7 @@
 
         _queryTextField = textField;
         _itemsSource = itemsSource;
+        _cellFactory = factory;
         _contextController = controller;
 
         _table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -104,11 +108,8 @@
 - (void)loadDefaults
 {
     self.backgroundColor = [UIColor whiteColor];
-    self.foregroundColor = [UIColor darkGrayColor];
-    self.separatorColor = [UIColor lightGrayColor];
-    self.fontSize = 14;
 
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.separatorColor = [UIColor lightGrayColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.topMargin = 0;
@@ -116,7 +117,7 @@
 
 - (void)keyboardWasShown:(NSNotification *)notification
 {
-    NSDictionary* info = [notification userInfo];
+    NSDictionary *info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
     CGFloat contextViewHeight = 0;
@@ -137,7 +138,10 @@
 
     calculatedHeight += _contextController.tabBarController.tabBar.frame.size.height; //keyboard is shown over it, need to compensate
 
-    self.frame = CGRectMake(_queryTextField.frame.origin.x, calculatedY, _queryTextField.frame.size.width, calculatedHeight);
+    self.frame = CGRectMake(_queryTextField.frame.origin.x,
+                            calculatedY,
+                            _queryTextField.frame.size.width,
+                            calculatedHeight);
     _table.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }
 
@@ -154,7 +158,8 @@
         [_itemsSource itemsFor:_queryTextField.text whenReady:
                                                             ^(NSArray *suggestions)
                                                             {
-                                                                if (_queryTextField.text.length < _itemsSource.minimumCharactersToTrigger)
+                                                                if (_queryTextField.text.length
+                                                                    < _itemsSource.minimumCharactersToTrigger)
                                                                 {
                                                                     self.suggestions = nil;
                                                                     [_table reloadData];
@@ -187,28 +192,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"TRAutocompleteCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:self.fontSize];
-        cell.textLabel.textColor = self.foregroundColor;
-        cell.backgroundColor = [UIColor clearColor];
-        cell.selectionStyle = self.selectionStyle;
-    }
 
-    TRSuggestion *suggestion = self.suggestions[(NSUInteger) indexPath.row];
-    cell.textLabel.text = suggestion.suggestionText;
+    id cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil)
+        cell = [_cellFactory createReusableCellWithIdentifier:identifier];
+
+    NSAssert([cell isKindOfClass:[UITableViewCell class]], @"Cell must inherit from UITableViewCell");
+    NSAssert([cell conformsToProtocol:@protocol(TRAutocompletionCell)], @"Cell must conform TRAutocompletionCell");
+    UITableViewCell <TRAutocompletionCell> *completionCell = (UITableViewCell <TRAutocompletionCell> *) cell;
+
+    id suggestion = self.suggestions[(NSUInteger) indexPath.row];
+    NSAssert([suggestion conformsToProtocol:@protocol(TRSuggestionItem)], @"Suggestion item must conform TRSuggestionItem");
+    id <TRSuggestionItem> suggestionItem = (id <TRSuggestionItem>) suggestion;
+
+    [completionCell updateWith:suggestionItem];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TRSuggestion *suggestion = self.suggestions[(NSUInteger) indexPath.row];
-    self.selectedSuggestion = suggestion;
+    id suggestion = self.suggestions[(NSUInteger) indexPath.row];
+    NSAssert([suggestion conformsToProtocol:@protocol(TRSuggestionItem)], @"Suggestion item must conform TRSuggestionItem");
 
-    _queryTextField.text = self.selectedSuggestion.suggestionText;
+    self.selectedSuggestion = (id <TRSuggestionItem>) suggestion;
+
+    _queryTextField.text = self.selectedSuggestion.completionText;
     [_queryTextField resignFirstResponder];
 }
 

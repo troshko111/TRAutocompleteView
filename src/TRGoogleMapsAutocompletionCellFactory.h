@@ -28,14 +28,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TRAutocompletionCellFactory.h"
 
-@interface TRSuggestion : NSObject
+@interface TRGoogleMapsAutocompletionCellFactory : NSObject<TRAutocompletionCellFactory>
 
-@property(readonly, nonatomic) NSString *address;
-
-- (id)initWith:(NSString *)address;
-
-- (NSString *)suggestionText;
-- (NSString *)description;
+- (id)initWithForegroundColor:(UIColor *)foregroundColor fontSize:(CGFloat)fontSize;
 
 @end

@@ -27,30 +27,18 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import "TRSuggestion.h"
+#import <Foundation/Foundation.h>
 
-@implementation TRSuggestion
+@protocol TRSuggestionItem;
 
-- (id)initWith:(NSString *)address
-{
-    self = [super init];
-    if (self)
-        _address = address;
+@protocol TRAutocompletionCell <NSObject>
 
-    return self;
-}
+- (void)updateWith:(id <TRSuggestionItem>)item;
 
-- (NSString *)suggestionText
-{
-    return self.address;
-}
+@end
 
-- (NSString *)description
-{
-    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@"self.address=%@", self.address];
-    [description appendString:@">"];
-    return description;
-}
+@protocol TRAutocompletionCellFactory <NSObject>
+
+- (id <TRAutocompletionCell>)createReusableCellWithIdentifier:(NSString *)identifier;
 
 @end

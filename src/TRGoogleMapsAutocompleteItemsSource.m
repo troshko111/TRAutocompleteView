@@ -27,11 +27,11 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import "TRSuggestion.h"
 #import "TRGoogleMapsAutocompleteItemsSource.h"
 #import "TRGoogleMapsAPI.h"
 #import "AFJSONRequestOperation.h"
 #import "TRStringExtensions.h"
+#import "TRGoogleMapsSuggestion.h"
 
 @implementation TRGoogleMapsAutocompleteItemsSource
 {
@@ -41,7 +41,7 @@
     BOOL _loading;
 }
 
-- (id)initWith:(NSUInteger)minimumCharactersToTrigger
+- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger
 {
     self = [super init];
     if (self)
@@ -52,7 +52,7 @@
 
 - (id)init
 {
-    return [self initWith:2];
+    return [self initWithMinimumCharactersToTrigger:2];
 }
 
 
@@ -92,8 +92,8 @@
 
                                                                 for (NSDictionary *place in places)
                                                                 {
-                                                                    TRSuggestion
-                                                                            *suggestion = [[TRSuggestion alloc] initWith:[place objectForKey:TRGoogleSuggestionsAddressKey]];
+                                                                    TRGoogleMapsSuggestion
+                                                                            *suggestion = [[TRGoogleMapsSuggestion alloc] initWith:[place objectForKey:TRGoogleSuggestionsAddressKey]];
                                                                     [suggestions addObject:suggestion];
                                                                 }
 
@@ -117,12 +117,6 @@
                                                                 @synchronized (self)
                                                                 {
                                                                     _loading = NO;
-
-                                                                    if (_requestToReload)
-                                                                    {
-                                                                        _requestToReload = NO;
-                                                                        [self itemsFor:query whenReady:suggestionsReady];
-                                                                    }
                                                                 }
                                                             }];
 

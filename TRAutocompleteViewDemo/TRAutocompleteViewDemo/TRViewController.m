@@ -31,6 +31,7 @@
 #import "TRAutocompleteView.h"
 #import "TRGoogleMapsAutocompleteItemsSource.h"
 #import "TRTextFieldExtensions.h"
+#import "TRGoogleMapsAutocompletionCellFactory.h"
 
 @implementation TRViewController
 {
@@ -47,16 +48,25 @@
 
     [_defaultQueryTextField setLeftPadding:2];
     _autocompleteViewForDefault = [TRAutocompleteView autocompleteViewBindedTo:_defaultQueryTextField
-                                                                   usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
+                                                                   usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
+                                                                                                                     initWithMinimumCharactersToTrigger:2]
+                                                                   cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
+                                                                                                                       initWithForegroundColor:[UIColor darkGrayColor]
+                                                                                                                                      fontSize:14]
                                                                   presentingIn:self];
 
     [_customQueryTextField setLeftPadding:9];
     _autocompleteViewForCustom = [TRAutocompleteView autocompleteViewBindedTo:_customQueryTextField
-                                                                       usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] init]
-                                                                      presentingIn:self];
+                                                                  usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2]
+                                                                  cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
+                                                                                                                      initWithForegroundColor:[UIColor whiteColor]
+                                                                                                                                     fontSize:14]
+                                                                 presentingIn:self];
     _autocompleteViewForCustom.topMargin = -5;
-    _autocompleteViewForCustom.foregroundColor = [UIColor whiteColor];
-    _autocompleteViewForCustom.backgroundColor = [UIColor colorWithRed:(27)/255.0f green:(27)/255.0f blue:(27)/255.0f alpha:1];
+    _autocompleteViewForCustom.backgroundColor = [UIColor colorWithRed:(27) / 255.0f
+                                                                 green:(27) / 255.0f
+                                                                  blue:(27) / 255.0f
+                                                                 alpha:1];
 }
 
 @end

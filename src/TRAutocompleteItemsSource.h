@@ -35,3 +35,9 @@
 - (void)itemsFor:(NSString *)query whenReady:(void (^)(NSArray *))suggestionsReady;
 
 @end
+
+@protocol TRSuggestionItem <NSObject>
+
+- (NSString *)completionText;
+
+@end

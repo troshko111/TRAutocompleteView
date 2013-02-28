@@ -27,11 +27,52 @@
 // either expressed or implied, of the FreeBSD Project.
 //
 
-#import <Foundation/Foundation.h>
+#import "TRGoogleMapsAutocompletionCellFactory.h"
 #import "TRAutocompleteItemsSource.h"
 
-@interface TRGoogleMapsAutocompleteItemsSource : NSObject <TRAutocompleteItemsSource>
+@interface TRGoogleMapsAutocompletionCell : UITableViewCell <TRAutocompletionCell>
+@end
 
-- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger;
+@implementation TRGoogleMapsAutocompletionCell
+
+- (void)updateWith:(id <TRSuggestionItem>)item
+{
+    self.textLabel.text = item.completionText;
+}
+
+@end
+
+@implementation TRGoogleMapsAutocompletionCellFactory
+{
+    UIColor *_foregroundColor;
+    CGFloat _fontSize;
+}
+
+- (id)initWithForegroundColor:(UIColor *)foregroundColor fontSize:(CGFloat)fontSize
+{
+    self = [super init];
+    if (self)
+    {
+        _foregroundColor = foregroundColor;
+        _fontSize = fontSize;
+    }
+
+    return self;
+}
+
+- (id <TRAutocompletionCell>)createReusableCellWithIdentifier:(NSString *)identifier
+{
+    TRGoogleMapsAutocompletionCell *cell = [[TRGoogleMapsAutocompletionCell alloc]
+                                                                            initWithStyle:UITableViewCellStyleDefault
+                                                                          reuseIdentifier:identifier];
+    cell.textLabel.font = [UIFont systemFontOfSize:_fontSize];
+    cell.textLabel.textColor = _foregroundColor;
+
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    return cell;
+
+}
 
 @end
