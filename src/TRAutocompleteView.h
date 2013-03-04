@@ -35,8 +35,10 @@
 
 @interface TRAutocompleteView : UIView
 
-@property(readonly) id<TRSuggestionItem> selectedSuggestion;
+@property(readonly) id <TRSuggestionItem> selectedSuggestion;
 @property(readonly) NSArray *suggestions;
+
+@property(copy) void (^didAutocompleteWith)(id <TRSuggestionItem>);
 
 @property(nonatomic) UIColor *separatorColor;
 @property(nonatomic) UITableViewCellSeparatorStyle separatorStyle;

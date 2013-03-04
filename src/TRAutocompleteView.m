@@ -219,6 +219,9 @@
 
     _queryTextField.text = self.selectedSuggestion.completionText;
     [_queryTextField resignFirstResponder];
+
+    if (self.didAutocompleteWith)
+        self.didAutocompleteWith(self.selectedSuggestion);
 }
 
 - (void)dealloc
