@@ -109,6 +109,7 @@ Also, two properties for tracking completion state:
 ````objective-c
 @property(readonly) id<TRSuggestionItem> selectedSuggestion;
 @property(readonly) NSArray *suggestions;
+@property(copy) void (^didAutocompleteWith)(id <TRSuggestionItem>);
 ````
 
 Step 5: Customize TRAutocompleteView
