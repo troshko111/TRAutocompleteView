@@ -104,7 +104,7 @@ Main customization step is to create your own cell and use it with CellFactory, 
 @property(nonatomic) CGFloat topMargin;
 ````
 
-Also, two properties for tracking completion state:
+Also, properties for tracking completion state:
 
 ````objective-c
 @property(readonly) id<TRSuggestionItem> selectedSuggestion;
