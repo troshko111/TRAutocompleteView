@@ -52,7 +52,7 @@ Bind autocompleteview to that UITextField (e.g in loadView method):
 
 ````objective-c
 _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
-                                                     usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2]
+                                                     usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc] initWithMinimumCharactersToTrigger:2 apiKey:@"INSERT_YOUR_PLACES_API_KEY_HERE"]
                                                      cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc] initWithCellForegroundColor:[UIColor lightGrayColor] fontSize:14]
                                                     presentingIn:self];
 ````
@@ -116,6 +116,12 @@ Step 5: Customize TRAutocompleteView
 ------------------------
 Check out Demo project, it's extremely easy to get started and requires a few simple steps to configure view for your needs,
 Google maps source/factory code will help you to understand what's going on
+
+Using google places autocomplete
+------------------------
+TRAutocompleteView ships with google places autocompletion source. In order to use it, you must generate YOUR OWN api key (get it here: https://code.google.com/apis/console)
+and pass it to TRGoogleMapsAutocompleteItemsSource initWithMinimumCharactersToTrigger:apiKey initializer.
+TRGoogleMapsAutocompleteItemsSource uses new Places API for autocompletion: https://developers.google.com/places/documentation/autocomplete 
 
 Cocoapods
 ------------------------
