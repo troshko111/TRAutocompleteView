@@ -123,6 +123,9 @@ TRAutocompleteView ships with google places autocompletion source. In order to u
 and pass it to TRGoogleMapsAutocompleteItemsSource initWithMinimumCharactersToTrigger:apiKey initializer.
 TRGoogleMapsAutocompleteItemsSource uses new Places API for autocompletion: https://developers.google.com/places/documentation/autocomplete 
 
+**P.S Common mistake: DON NOT USE Google Maps API v3 key, 
+you need Places API KEY instead, otherwise all requests will just fail with REQUEST_DENIED status code**
+
 Cocoapods
 ------------------------
 Coming soon
