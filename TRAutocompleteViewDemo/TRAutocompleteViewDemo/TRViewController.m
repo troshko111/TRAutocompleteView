@@ -51,7 +51,8 @@
     [_textField setLeftPadding:9];
     _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
                                                          usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
-                                                                                                           initWithMinimumCharactersToTrigger:2]
+                                                                                                           initWithMinimumCharactersToTrigger:2
+                                                                                                                                       apiKey:@"INSERT_YOUR_PLACES_API_KEY_HERE"]
                                                          cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
                                                                                                              initWithCellForegroundColor:[UIColor lightGrayColor]
                                                                                                                                 fontSize:14]

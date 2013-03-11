@@ -28,10 +28,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "TRAutocompleteItemsSource.h"
 
 @interface TRGoogleMapsAutocompleteItemsSource : NSObject <TRAutocompleteItemsSource>
 
-- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger;
+@property(nonatomic) CLLocationCoordinate2D location;
+@property(nonatomic) CGFloat radiusMeters;
+
+- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger apiKey:(NSString *)apiKey;
 
 @end

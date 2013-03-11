@@ -22,6 +22,7 @@
 		69076FE55865293208CAEBB4 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907627314849C3F3ED18005 /* AFNetworkActivityIndicatorManager.m */; };
 		76272FC416DE7DF8002B848B /* TRStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC116DE7DF8002B848B /* TRStringExtensions.m */; };
 		76272FC516DE7DF8002B848B /* TRTextFieldExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */; };
+		767D03DE16EE228D0051925C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767D03DD16EE228D0051925C /* CoreLocation.framework */; };
 		76E6DCB416DE10E500F53C02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB316DE10E500F53C02 /* UIKit.framework */; };
 		76E6DCB616DE10E500F53C02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB516DE10E500F53C02 /* Foundation.framework */; };
 		76E6DCB816DE10E500F53C02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E6DCB716DE10E500F53C02 /* CoreGraphics.framework */; };
@@ -35,7 +36,6 @@
 		76E6DCD016DE10E500F53C02 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E6DCCE16DE10E500F53C02 /* MainStoryboard_iPad.storyboard */; };
 		76E6DCD316DE10E500F53C02 /* TRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6DCD216DE10E500F53C02 /* TRViewController.m */; };
 		76E6DCE116DE129C00F53C02 /* TRAutocompleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6DCDC16DE129C00F53C02 /* TRAutocompleteView.m */; };
-		76E6DCE216DE129C00F53C02 /* TRGoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6DCDE16DE129C00F53C02 /* TRGoogleMapsAPI.m */; };
 		76E6DCE316DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E6DCE016DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +70,7 @@
 		76272FC116DE7DF8002B848B /* TRStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRStringExtensions.m; path = ../src/TRStringExtensions.m; sourceTree = "<group>"; };
 		76272FC216DE7DF8002B848B /* TRTextFieldExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRTextFieldExtensions.h; path = ../src/TRTextFieldExtensions.h; sourceTree = "<group>"; };
 		76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRTextFieldExtensions.m; path = ../src/TRTextFieldExtensions.m; sourceTree = "<group>"; };
+		767D03DD16EE228D0051925C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		76E6DCB016DE10E500F53C02 /* TRAutocompleteViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRAutocompleteViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E6DCB316DE10E500F53C02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		76E6DCB516DE10E500F53C02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,8 +91,6 @@
 		76E6DCDA16DE129C00F53C02 /* TRAutocompleteItemsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRAutocompleteItemsSource.h; path = ../src/TRAutocompleteItemsSource.h; sourceTree = "<group>"; };
 		76E6DCDB16DE129C00F53C02 /* TRAutocompleteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRAutocompleteView.h; path = ../src/TRAutocompleteView.h; sourceTree = "<group>"; };
 		76E6DCDC16DE129C00F53C02 /* TRAutocompleteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRAutocompleteView.m; path = ../src/TRAutocompleteView.m; sourceTree = "<group>"; };
-		76E6DCDD16DE129C00F53C02 /* TRGoogleMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRGoogleMapsAPI.h; path = ../src/TRGoogleMapsAPI.h; sourceTree = "<group>"; };
-		76E6DCDE16DE129C00F53C02 /* TRGoogleMapsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRGoogleMapsAPI.m; path = ../src/TRGoogleMapsAPI.m; sourceTree = "<group>"; };
 		76E6DCDF16DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRGoogleMapsAutocompleteItemsSource.h; path = ../src/TRGoogleMapsAutocompleteItemsSource.h; sourceTree = "<group>"; };
 		76E6DCE016DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRGoogleMapsAutocompleteItemsSource.m; path = ../src/TRGoogleMapsAutocompleteItemsSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767D03DE16EE228D0051925C /* CoreLocation.framework in Frameworks */,
 				76E6DCB416DE10E500F53C02 /* UIKit.framework in Frameworks */,
 				76E6DCB616DE10E500F53C02 /* Foundation.framework in Frameworks */,
 				76E6DCB816DE10E500F53C02 /* CoreGraphics.framework in Frameworks */,
@@ -126,8 +126,6 @@
 			children = (
 				76E6DCE016DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m */,
 				76E6DCDF16DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.h */,
-				76E6DCDE16DE129C00F53C02 /* TRGoogleMapsAPI.m */,
-				76E6DCDD16DE129C00F53C02 /* TRGoogleMapsAPI.h */,
 				6907621990C7FFD5BD443369 /* TRGoogleMapsSuggestion.m */,
 				690761032FB6752BE3865BC9 /* TRGoogleMapsSuggestion.h */,
 				69076BB40AB16C7BEE5CE7F7 /* TRGoogleMapsAutocompletionCellFactory.h */,
@@ -192,6 +190,7 @@
 		76E6DCB216DE10E500F53C02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				767D03DD16EE228D0051925C /* CoreLocation.framework */,
 				76E6DCB316DE10E500F53C02 /* UIKit.framework */,
 				76E6DCB516DE10E500F53C02 /* Foundation.framework */,
 				76E6DCB716DE10E500F53C02 /* CoreGraphics.framework */,
@@ -316,7 +315,6 @@
 				76E6DCC416DE10E500F53C02 /* TRAppDelegate.m in Sources */,
 				76E6DCD316DE10E500F53C02 /* TRViewController.m in Sources */,
 				76E6DCE116DE129C00F53C02 /* TRAutocompleteView.m in Sources */,
-				76E6DCE216DE129C00F53C02 /* TRGoogleMapsAPI.m in Sources */,
 				76E6DCE316DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m in Sources */,
 				69076F15AD5CAE3C41ECDD44 /* AFHTTPClient.m in Sources */,
 				69076960F6A2040CBD538458 /* AFHTTPRequestOperation.m in Sources */,

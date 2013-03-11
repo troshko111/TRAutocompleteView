@@ -28,13 +28,14 @@
 //
 
 #import "TRGoogleMapsAutocompleteItemsSource.h"
-#import "TRGoogleMapsAPI.h"
 #import "AFJSONRequestOperation.h"
 #import "TRStringExtensions.h"
 #import "TRGoogleMapsSuggestion.h"
 
 @implementation TRGoogleMapsAutocompleteItemsSource
 {
+    NSString *_apiKey;
+
     NSUInteger _minimumCharactersToTrigger;
 
     BOOL _requestToReload;
@@ -42,19 +43,20 @@
 }
 
 - (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger
+                                  apiKey:(NSString *)apiKey
 {
     self = [super init];
     if (self)
+    {
         _minimumCharactersToTrigger = minimumCharactersToTrigger;
+        _apiKey = apiKey;
+
+        self.location = kCLLocationCoordinate2DInvalid;
+        self.radiusMeters = -1;
+    }
 
     return self;
 }
-
-- (id)init
-{
-    return [self initWithMinimumCharactersToTrigger:2];
-}
-
 
 - (NSUInteger)minimumCharactersToTrigger
 {
@@ -78,9 +80,7 @@
 
 - (void)requestSuggestionsFor:(NSString *)query whenReady:(void (^)(NSArray *))suggestionsReady
 {
-    NSString *urlEncode = [query urlEncode];
-
-    NSString *urlString = [NSString stringWithFormat:TRGoogleSuggestionsUrlFormat, urlEncode, [[NSLocale currentLocale] localeIdentifier]];
+    NSString *urlString = [self autocompleteUrlFor:query];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
 
     AFJSONRequestOperation *operation =
@@ -88,12 +88,12 @@
                                                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
                                                             {
                                                                 NSMutableArray *suggestions = [[NSMutableArray alloc] init];
-                                                                NSArray *places = [JSON objectForKey:TRGoogleSuggestionsPlacemarkKey];
+                                                                NSArray *predictions = [JSON objectForKey:@"predictions"];
 
-                                                                for (NSDictionary *place in places)
+                                                                for (NSDictionary *place in predictions)
                                                                 {
                                                                     TRGoogleMapsSuggestion
-                                                                            *suggestion = [[TRGoogleMapsSuggestion alloc] initWith:[place objectForKey:TRGoogleSuggestionsAddressKey]];
+                                                                            *suggestion = [[TRGoogleMapsSuggestion alloc] initWith:[place objectForKey:@"description"]];
                                                                     [suggestions addObject:suggestion];
                                                                 }
 
@@ -121,6 +121,26 @@
                                                             }];
 
     [operation start];
+}
+
+- (NSString*) autocompleteUrlFor:(NSString*)query
+{
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%@",
+                                                  [query urlEncode]];
+
+    [urlString appendFormat:@"&key=%@", _apiKey];
+
+    if (CLLocationCoordinate2DIsValid(self.location))
+    {
+        [urlString appendFormat:@"&sensor=%@", @"true"];
+        [urlString appendFormat:@"&location=%f,%f", self.location.latitude, self.location.longitude];
+        if (self.radiusMeters > 0)
+            [urlString appendFormat:@"&radius=%f", self.radiusMeters];
+    }
+    else
+        [urlString appendFormat:@"&sensor=%@", @"false"];
+
+    return urlString;
 }
 
 @end
