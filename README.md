@@ -128,4 +128,8 @@ you need Places API KEY instead, otherwise all requests will just fail with REQU
 
 Cocoapods
 ------------------------
-Coming soon
+pod 'TRAutocompleteView',       '~> 1.1'
+
+License
+------------------------
+FreeBSD
