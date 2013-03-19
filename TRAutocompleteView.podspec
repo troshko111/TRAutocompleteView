@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.source_files = 'src'
   s.requires_arc = true
   
-  s.frameworks = 'Foundation', 'UIKit', 'CoreLocation'
+  s.frameworks = 'CoreLocation'
   s.dependency 'AFNetworking', '~> 1.1.0'
 end
