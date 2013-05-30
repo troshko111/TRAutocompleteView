@@ -133,7 +133,9 @@
         kbHeight = kbSize.width;
     }
 
-    CGFloat calculatedY = _queryTextField.frame.origin.y + _queryTextField.frame.size.height + self.topMargin;
+    CGPoint textPosition = [_queryTextField convertPoint:_queryTextField.bounds.origin toView:nil]; //Taking in account Y position of queryTextField relatively to it's Window
+    
+    CGFloat calculatedY = textPosition.y + _queryTextField.frame.size.height + self.topMargin;
     CGFloat calculatedHeight = contextViewHeight - calculatedY - kbHeight;
 
     calculatedHeight += _contextController.tabBarController.tabBar.frame.size.height; //keyboard is shown over it, need to compensate
