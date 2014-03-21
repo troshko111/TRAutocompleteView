@@ -40,7 +40,7 @@
 @implementation TRGoogleMapsAutocompleteItemsSource
 {
     NSString *_apiKey;
-
+    NSString *_language;
     NSUInteger _minimumCharactersToTrigger;
 
     BOOL _requestToReload;
@@ -48,6 +48,7 @@
 }
 
 - (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger
+                                language:(NSString *)language
                                   apiKey:(NSString *)apiKey
 {
     self = [super init];
@@ -55,12 +56,19 @@
     {
         _minimumCharactersToTrigger = minimumCharactersToTrigger;
         _apiKey = apiKey;
-
+        _language = language;
+        
         self.location = kCLLocationCoordinate2DInvalid;
         self.radiusMeters = -1;
     }
-
+    
     return self;
+}
+
+- (id)initWithMinimumCharactersToTrigger:(NSUInteger)minimumCharactersToTrigger
+                                  apiKey:(NSString *)apiKey
+{
+    return [self initWithMinimumCharactersToTrigger:minimumCharactersToTrigger language:@"en" apiKey:apiKey];
 }
 
 - (NSUInteger)minimumCharactersToTrigger
@@ -180,6 +188,7 @@
                                                   [query urlEncode]];
 
     [urlString appendFormat:@"&key=%@", _apiKey];
+    [urlString appendFormat:@"&language=%@", _language];
 
     if (CLLocationCoordinate2DIsValid(self.location))
     {
