@@ -164,12 +164,12 @@
                                                                     < _itemsSource.minimumCharactersToTrigger)
                                                                 {
                                                                     self.suggestions = nil;
-                                                                    [_table reloadData];
+                                                                    [self refreshTable];
                                                                 }
                                                                 else
                                                                 {
                                                                     self.suggestions = suggestions;
-                                                                    [_table reloadData];
+                                                                    [self refreshTable];
 
                                                                     if (self.suggestions.count > 0 && !_visible)
                                                                     {
@@ -182,7 +182,7 @@
     else
     {
         self.suggestions = nil;
-        [_table reloadData];
+        [self refreshTable];
     }
 }
 
@@ -224,6 +224,12 @@
 
     if (self.didAutocompleteWith)
         self.didAutocompleteWith(self.selectedSuggestion);
+}
+
+- (void)refreshTable {
+    if (_queryTextField.isFirstResponder) {
+        [_table reloadData];
+    }
 }
 
 - (void)dealloc
