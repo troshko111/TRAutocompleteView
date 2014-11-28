@@ -28,7 +28,6 @@
 //
 
 #import "TRGoogleMapsAutocompleteItemsSource.h"
-#define AFNETWORKING_2 1
 #ifdef AFNETWORKING_2
 #import "AFHTTPSessionManager.h"
 #else
