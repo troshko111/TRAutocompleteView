@@ -45,4 +45,9 @@
     return self.address;
 }
 
+- (NSString *)displayText
+{
+    return self.completionText;
+}
+
 @end
