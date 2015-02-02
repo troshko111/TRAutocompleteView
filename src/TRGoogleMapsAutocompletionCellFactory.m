@@ -37,7 +37,7 @@
 
 - (void)updateWith:(id <TRSuggestionItem>)item
 {
-    self.textLabel.text = item.completionText;
+    self.textLabel.text = item.displayText;
 }
 
 @end
