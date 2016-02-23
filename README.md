@@ -126,7 +126,7 @@ TRGoogleMapsAutocompleteItemsSource uses new Places API for autocompletion: http
 **P.S Common mistake: DON NOT USE Google Maps API v3 key, 
 you need Places API KEY instead, otherwise all requests will just fail with REQUEST_DENIED status code**
 
-Cocoapods
+CocoaPods
 ------------------------
 pod 'TRAutocompleteView',       '~> 1.1'
 
