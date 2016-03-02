@@ -146,6 +146,11 @@
                             _queryTextField.frame.size.width,
                             calculatedHeight);
     _table.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    
+    if (self.suggestions == nil || self.suggestions.count == 0) {
+        [self removeFromSuperview];
+        _visible = NO;
+    }
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
@@ -184,6 +189,11 @@
     {
         self.suggestions = nil;
         [self refreshTable];
+    }
+    
+    if (self.suggestions == nil || self.suggestions.count == 0) {
+        [self removeFromSuperview];
+        _visible = NO;
     }
 }
 
