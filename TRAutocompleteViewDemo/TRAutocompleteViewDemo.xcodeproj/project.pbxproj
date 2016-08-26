@@ -7,19 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6907605A9F8138C763447546 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 690768D5FED7648A8BCFC8C0 /* AFImageRequestOperation.m */; };
+		0D705F31E974106B48F6DD87 /* libPods-TRAutocompleteViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADEBACEB8189910CB322BAE9 /* libPods-TRAutocompleteViewDemo.a */; };
 		6907606835FD3267D373C2E5 /* TRGoogleMapsSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907621990C7FFD5BD443369 /* TRGoogleMapsSuggestion.m */; };
 		6907637E09CE6E2DEDAC11C6 /* TRGoogleMapsAutocompletionCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076D362CA3A53D355CA8FE /* TRGoogleMapsAutocompletionCellFactory.m */; };
-		69076431F1C7EFBAFFDBD49D /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 690761C3E212E70C5D006ACD /* UIImageView+AFNetworking.m */; };
-		690764ED17B27BE168A24444 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076FC975806790E5F18B6B /* AFXMLRequestOperation.m */; };
 		69076555E9E9B6B85EC7C706 /* debut_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 69076AFBF73396D572C1A027 /* debut_dark.png */; };
-		6907661491D2D5A34E55BC5C /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076AFE3E59F08EDE7C0BC7 /* AFJSONRequestOperation.m */; };
-		69076960F6A2040CBD538458 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 690766F5D1F2E687463EA8A4 /* AFHTTPRequestOperation.m */; };
 		69076AE5138352DEDA7B55D5 /* debut_dark_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 690767C6EE680222C8BBC046 /* debut_dark_@2X.png */; };
-		69076D11E328732D47889D3E /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 690764D9460AF709F29174E0 /* AFPropertyListRequestOperation.m */; };
-		69076D53513CC523F3390E49 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076C4783E97AB874031F58 /* AFURLConnectionOperation.m */; };
-		69076F15AD5CAE3C41ECDD44 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 690766B727D0EA93B74C402F /* AFHTTPClient.m */; };
-		69076FE55865293208CAEBB4 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907627314849C3F3ED18005 /* AFNetworkActivityIndicatorManager.m */; };
 		76272FC416DE7DF8002B848B /* TRStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC116DE7DF8002B848B /* TRStringExtensions.m */; };
 		76272FC516DE7DF8002B848B /* TRTextFieldExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76272FC316DE7DF8002B848B /* TRTextFieldExtensions.m */; };
 		767D03DE16EE228D0051925C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767D03DD16EE228D0051925C /* CoreLocation.framework */; };
@@ -40,32 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C5E7F557EA4C0A65189A475 /* Pods-TRAutocompleteViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRAutocompleteViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRAutocompleteViewDemo/Pods-TRAutocompleteViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		690761032FB6752BE3865BC9 /* TRGoogleMapsSuggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRGoogleMapsSuggestion.h; path = ../src/TRGoogleMapsSuggestion.h; sourceTree = "<group>"; };
 		690761A93BAD2B56EB2C90B7 /* TRAutocompletionCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRAutocompletionCellFactory.h; path = ../src/TRAutocompletionCellFactory.h; sourceTree = "<group>"; };
-		690761AB4739E5D5F3683817 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		690761C3E212E70C5D006ACD /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "../thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		6907621990C7FFD5BD443369 /* TRGoogleMapsSuggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRGoogleMapsSuggestion.m; path = ../src/TRGoogleMapsSuggestion.m; sourceTree = "<group>"; };
-		6907625BB1F8A5F32097D37D /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = ../thirdparty/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
-		6907627314849C3F3ED18005 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = ../thirdparty/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		69076353340C11CCD36BFE57 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = ../thirdparty/AFNetworking/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		690764D9460AF709F29174E0 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFPropertyListRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		690765CC9BABB782F45ACADD /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		690765DF2BD36C9ACE958A1C /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFImageRequestOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFImageRequestOperation.h; sourceTree = "<group>"; };
-		69076676D0629CC8A4182BD6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		690766B727D0EA93B74C402F /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = ../thirdparty/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
-		690766F5D1F2E687463EA8A4 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		690767C6EE680222C8BBC046 /* debut_dark_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debut_dark_@2X.png"; sourceTree = "<group>"; };
-		690768D5FED7648A8BCFC8C0 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFImageRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFImageRequestOperation.m; sourceTree = "<group>"; };
-		69076A3A00B9A88B05C74952 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		69076AFBF73396D572C1A027 /* debut_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = debut_dark.png; sourceTree = "<group>"; };
-		69076AFE3E59F08EDE7C0BC7 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFJSONRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		69076B5B47D14987733D8EED /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFJSONRequestOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		69076B836CE41A048B4A9AE1 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFPropertyListRequestOperation.h; path = ../thirdparty/AFNetworking/AFNetworking/AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
 		69076BB40AB16C7BEE5CE7F7 /* TRGoogleMapsAutocompletionCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRGoogleMapsAutocompletionCellFactory.h; path = ../src/TRGoogleMapsAutocompletionCellFactory.h; sourceTree = "<group>"; };
-		69076C4783E97AB874031F58 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		69076D362CA3A53D355CA8FE /* TRGoogleMapsAutocompletionCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRGoogleMapsAutocompletionCellFactory.m; path = ../src/TRGoogleMapsAutocompletionCellFactory.m; sourceTree = "<group>"; };
-		69076EE3944EA913F737119C /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = ../thirdparty/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		69076FC975806790E5F18B6B /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = ../thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		76272FC016DE7DF8002B848B /* TRStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRStringExtensions.h; path = ../src/TRStringExtensions.h; sourceTree = "<group>"; };
 		76272FC116DE7DF8002B848B /* TRStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRStringExtensions.m; path = ../src/TRStringExtensions.m; sourceTree = "<group>"; };
 		76272FC216DE7DF8002B848B /* TRTextFieldExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRTextFieldExtensions.h; path = ../src/TRTextFieldExtensions.h; sourceTree = "<group>"; };
@@ -93,6 +67,8 @@
 		76E6DCDC16DE129C00F53C02 /* TRAutocompleteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRAutocompleteView.m; path = ../src/TRAutocompleteView.m; sourceTree = "<group>"; };
 		76E6DCDF16DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRGoogleMapsAutocompleteItemsSource.h; path = ../src/TRGoogleMapsAutocompleteItemsSource.h; sourceTree = "<group>"; };
 		76E6DCE016DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRGoogleMapsAutocompleteItemsSource.m; path = ../src/TRGoogleMapsAutocompleteItemsSource.m; sourceTree = "<group>"; };
+		ADEBACEB8189910CB322BAE9 /* libPods-TRAutocompleteViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRAutocompleteViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9354BAFFEFBAD2C337B83CC /* Pods-TRAutocompleteViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRAutocompleteViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRAutocompleteViewDemo/Pods-TRAutocompleteViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +80,22 @@
 				76E6DCB416DE10E500F53C02 /* UIKit.framework in Frameworks */,
 				76E6DCB616DE10E500F53C02 /* Foundation.framework in Frameworks */,
 				76E6DCB816DE10E500F53C02 /* CoreGraphics.framework in Frameworks */,
+				0D705F31E974106B48F6DD87 /* libPods-TRAutocompleteViewDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54D2ABF54F537FB882A1C75A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C5E7F557EA4C0A65189A475 /* Pods-TRAutocompleteViewDemo.debug.xcconfig */,
+				C9354BAFFEFBAD2C337B83CC /* Pods-TRAutocompleteViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6907600F96062972EB3D7C2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,25 +131,6 @@
 		69076A3DCC5965F98581CA8C /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				6907625BB1F8A5F32097D37D /* AFHTTPClient.h */,
-				690766B727D0EA93B74C402F /* AFHTTPClient.m */,
-				69076676D0629CC8A4182BD6 /* AFHTTPRequestOperation.h */,
-				690766F5D1F2E687463EA8A4 /* AFHTTPRequestOperation.m */,
-				690765DF2BD36C9ACE958A1C /* AFImageRequestOperation.h */,
-				690768D5FED7648A8BCFC8C0 /* AFImageRequestOperation.m */,
-				69076B5B47D14987733D8EED /* AFJSONRequestOperation.h */,
-				69076AFE3E59F08EDE7C0BC7 /* AFJSONRequestOperation.m */,
-				69076EE3944EA913F737119C /* AFNetworkActivityIndicatorManager.h */,
-				6907627314849C3F3ED18005 /* AFNetworkActivityIndicatorManager.m */,
-				69076353340C11CCD36BFE57 /* AFNetworking.h */,
-				69076B836CE41A048B4A9AE1 /* AFPropertyListRequestOperation.h */,
-				690764D9460AF709F29174E0 /* AFPropertyListRequestOperation.m */,
-				69076A3A00B9A88B05C74952 /* AFURLConnectionOperation.h */,
-				69076C4783E97AB874031F58 /* AFURLConnectionOperation.m */,
-				690761AB4739E5D5F3683817 /* AFXMLRequestOperation.h */,
-				69076FC975806790E5F18B6B /* AFXMLRequestOperation.m */,
-				690765CC9BABB782F45ACADD /* UIImageView+AFNetworking.h */,
-				690761C3E212E70C5D006ACD /* UIImageView+AFNetworking.m */,
 			);
 			name = AFNetworking;
 			sourceTree = "<group>";
@@ -176,6 +143,7 @@
 				76E6DCB216DE10E500F53C02 /* Frameworks */,
 				76E6DCB116DE10E500F53C02 /* Products */,
 				690763D6A9A217A454AB8187 /* thirdparty */,
+				54D2ABF54F537FB882A1C75A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +162,7 @@
 				76E6DCB316DE10E500F53C02 /* UIKit.framework */,
 				76E6DCB516DE10E500F53C02 /* Foundation.framework */,
 				76E6DCB716DE10E500F53C02 /* CoreGraphics.framework */,
+				ADEBACEB8189910CB322BAE9 /* libPods-TRAutocompleteViewDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76E6DCD616DE10E500F53C02 /* Build configuration list for PBXNativeTarget "TRAutocompleteViewDemo" */;
 			buildPhases = (
+				BED854539FC7C84ECB942A09 /* [CP] Check Pods Manifest.lock */,
 				76E6DCAC16DE10E500F53C02 /* Sources */,
 				76E6DCAD16DE10E500F53C02 /* Frameworks */,
 				76E6DCAE16DE10E500F53C02 /* Resources */,
+				47491FA0591E3EE161150704 /* [CP] Embed Pods Frameworks */,
+				844EF8D42FC386BFBA31B5C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,6 +278,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47491FA0591E3EE161150704 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRAutocompleteViewDemo/Pods-TRAutocompleteViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		844EF8D42FC386BFBA31B5C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TRAutocompleteViewDemo/Pods-TRAutocompleteViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED854539FC7C84ECB942A09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		76E6DCAC16DE10E500F53C02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -316,15 +336,6 @@
 				76E6DCD316DE10E500F53C02 /* TRViewController.m in Sources */,
 				76E6DCE116DE129C00F53C02 /* TRAutocompleteView.m in Sources */,
 				76E6DCE316DE129C00F53C02 /* TRGoogleMapsAutocompleteItemsSource.m in Sources */,
-				69076F15AD5CAE3C41ECDD44 /* AFHTTPClient.m in Sources */,
-				69076960F6A2040CBD538458 /* AFHTTPRequestOperation.m in Sources */,
-				6907605A9F8138C763447546 /* AFImageRequestOperation.m in Sources */,
-				6907661491D2D5A34E55BC5C /* AFJSONRequestOperation.m in Sources */,
-				69076FE55865293208CAEBB4 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				69076D11E328732D47889D3E /* AFPropertyListRequestOperation.m in Sources */,
-				69076D53513CC523F3390E49 /* AFURLConnectionOperation.m in Sources */,
-				690764ED17B27BE168A24444 /* AFXMLRequestOperation.m in Sources */,
-				69076431F1C7EFBAFFDBD49D /* UIImageView+AFNetworking.m in Sources */,
 				6907606835FD3267D373C2E5 /* TRGoogleMapsSuggestion.m in Sources */,
 				76272FC416DE7DF8002B848B /* TRStringExtensions.m in Sources */,
 				76272FC516DE7DF8002B848B /* TRTextFieldExtensions.m in Sources */,
@@ -422,10 +433,13 @@
 		};
 		76E6DCD716DE10E500F53C02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5E7F557EA4C0A65189A475 /* Pods-TRAutocompleteViewDemo.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TRAutocompleteViewDemo/TRAutocompleteViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "TRAutocompleteViewDemo/TRAutocompleteViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.autocompletedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -433,10 +447,13 @@
 		};
 		76E6DCD816DE10E500F53C02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9354BAFFEFBAD2C337B83CC /* Pods-TRAutocompleteViewDemo.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TRAutocompleteViewDemo/TRAutocompleteViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "TRAutocompleteViewDemo/TRAutocompleteViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.autocompletedemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -52,7 +52,7 @@
     _autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:_textField
                                                          usingSource:[[TRGoogleMapsAutocompleteItemsSource alloc]
                                                                                                            initWithMinimumCharactersToTrigger:2
-                                                                                                                                       apiKey:@"INSERT_YOUR_PLACES_API_KEY_HERE"]
+                                                                                                                                       apiKey:@"AIzaSyCXnNNND9WH7zW52vL41j3H1Wy2K9vyap8"]
                                                          cellFactory:[[TRGoogleMapsAutocompletionCellFactory alloc]
                                                                                                              initWithCellForegroundColor:[UIColor lightGrayColor]
                                                                                                                                 fontSize:14]
